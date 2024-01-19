@@ -6,6 +6,11 @@ import { getToday } from '@/common';
 import Chart from '@/Components/Chart.vue'
 import ResultTable from '@/Components/ResultTable.vue'
 
+onMounted(() => {
+    form.startDate = getToday()
+    form.endDate = getToday()
+})
+
 const form = reactive({
     startDate: null,
     endDate: null,
@@ -37,11 +42,6 @@ const getData = async () => {
         console.log(e.message)
     }
 }
-
-onMounted(() => {
-    form.startDate = getToday()
-    form.endDate = getToday()
-})
 
 </script>
 
